@@ -1,4 +1,4 @@
-Airbnb NYC Price Prediction: Quantifying the $10.81 Capacity Premium
+**Airbnb NYC Price Prediction: Quantifying the $10.81 Capacity Premium
 
 Course: MSDS692 – Data Science Practicum 1
 
@@ -8,8 +8,8 @@ Semester: Fall 2025
 
 Repository: https://github.com/Barsha-bytes/Project-review-airbnb_subway.git
 
-1. Project Overview & Business Impact
-
+**1. Project Overview & Business Impact**
+**
 This project conducts a comprehensive analysis of Airbnb listing prices in New York City, moving beyond traditional pricing features (like bedroom count) to measure the value of Guest Experience (via sentiment) and Transit Accessibility (via distance to subway).
 
 By building a robust predictive regression model, we identified a $40 Million Market Opportunity for hosts who strategically maximize capacity and customer service, as the current market undervalues these factors.
@@ -32,9 +32,9 @@ Status
 
 
 
-Completed (Baseline), Random Forest Refinement Next
+**Completed (Baseline), Random Forest Refinement Next**
 
-2. Methodology and Feature Engineering
+**2. Methodology and Feature Engineering**
 
 The analysis integrates structured property data with unstructured textual data from guest reviews, utilizing advanced techniques to generate powerful predictive features.
 
@@ -82,7 +82,7 @@ Regression Coefficient
 
 The maximum number of guests a listing accommodates (the single largest price driver).
 
-3. Key Quantitative Findings
+**3. Key Quantitative Findings**
 
 The predictive modeling effort yielded precise, actionable insights into how price is truly determined in the NYC market:
 
@@ -98,11 +98,11 @@ Listings that are farther from the subway system are penalized, highlighting the
 
 $$\text{Transit Penalty} = - \mathbf{\$1.26} \text{ per point of Transit Score}$$
 
-4. How to Run This Project (Reproducibility)
+**4. How to Run This Project (Reproducibility)**
 
 The project code is maintained in this GitHub repository and is fully reproducible using the provided Jupyter notebook.
 
-Step 1: Download and Setup
+**Step 1: Download and Setup**
 
 Clone the repository to your local machine:
 
@@ -115,14 +115,14 @@ cd Project-review-airbnb_subway
 pip install -r requirements.txt
 
 
-Step 2: Run the Analysis
+**Step 2: Run the Analysis**
 
 The full analysis pipeline is contained within the core Jupyter notebook, which includes data loading, feature engineering, and the Linear Regression baseline model.
 
 Core Notebook: airbnb_subway.ipynb
 
-Supporting Documents
+**Supporting Documents**
 
-Full Presentation: Project Work (1).pdf .
+Full Presentation:Project Work (2).pdf.
 
 Core Code: airbnb_subway.ipynb
