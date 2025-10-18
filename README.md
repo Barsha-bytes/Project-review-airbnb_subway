@@ -123,6 +123,6 @@ Core Notebook: airbnb_subway.ipynb
 
 Supporting Documents
 
-Full Presentation: Project Work (1).pdf (This link points to the PDF file you uploaded, assuming you place it in the root folder).
+Full Presentation: Project Work (1).pdf .
 
 Core Code: airbnb_subway.ipynb
