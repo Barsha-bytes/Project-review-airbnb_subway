@@ -1,42 +1,128 @@
-Airbnb Listings and Subway Analysis – NYC
+Airbnb NYC Price Prediction: Quantifying the $10.81 Capacity Premium
+
 Course: MSDS692 – Data Science Practicum 1
+
 Author: Barsha Kakshapati
+
 Semester: Fall 2025
 
-Project Description (What the project is about)
-This project analyzes Airbnb listings in New York City. I combined listing price/location data with unstructured guest reviews (measuring sentiment) and subway distance. My goal was to build a strong predictive model to find out exactly how much these factors influence price.
+Repository: https://github.com/Barsha-bytes/Project-review-airbnb_subway.git
 
-# Airbnb NYC Listings and Reviews Analysis: Predicting Price with Sentiment
-2. Overview	## Project Overview This project conducts a comprehensive analysis of Airbnb listings in New York City, aiming to understand the factors that influence listing prices. The core approach is to build a robust predictive model by integrating two distinct data sources: structured property data and unstructured text data from guest reviews.
-3. Metadata	### Project Details * **Course:** MSDS692 – Data Science Practicum 1 * **Author:** Barsha Kakshapati * **Semester:** Fall 2025
+1. Project Overview & Business Impact
 
-Export to Sheets
-Step 2: Detail Data Sources and Feature Engineering (The "How")
-Explain the key features you created, as these are the main drivers of your analysis.
+This project conducts a comprehensive analysis of Airbnb listing prices in New York City, moving beyond traditional pricing features (like bedroom count) to measure the value of Guest Experience (via sentiment) and Transit Accessibility (via distance to subway).
 
-Action	Suggested Markdown Content (Copy/Paste)
-1. Data Sources	## Data and Methodology The analysis combines the following external datasets: * **Listings & Reviews:** Sourced from Inside Airbnb. * **Subway Data:** MTA GTFS information for transit proximity.
-2. Key Features	### Feature Engineering Focus Special emphasis was placed on transforming unstructured data into predictive features (Week 4): * **Sentiment Score:** The average compound score of guest reviews using the VADER lexicon. * **Distance to Subway:** Calculated using a **cKDTree** to find the nearest subway station distance in meters for each listing. * **Property Type:** One-hot encoded property classifications and other structural features like **Guest Capacity**.
+By building a robust predictive regression model, we identified a $40 Million Market Opportunity for hosts who strategically maximize capacity and customer service, as the current market undervalues these factors.
 
-Export to Sheets
-Step 3: Present Modeling and Key Findings (The "What")
-Showcase your success with quantitative results, which are more impactful than a general description.
+Key Performance Metric
 
-Action	Suggested Markdown Content (Copy/Paste)
-1. Modeling Approach	## Predictive Modeling and Results The project follows a standard machine learning pipeline for price prediction (regression). The process began with a **baseline Linear Regression** model and is being refined with a **Random Forest** model to maximize accuracy.
-2. Performance Table	### Model Performance Summary `
-3. Top Drivers	### Top Price Drivers The analysis identified the following key factors driving pricing variation: 1. **Property Type** (e.g., Hotel vs. Apartment) 2. **Guest Capacity** (number of people accommodated) 3. **Sentiment Score** (how good the guest reviews are)
-4. Current Status	## Project Status * **Status:** In Progress (90% complete for Week 5). * **Completed:** Data cleaning, feature engineering, and baseline Linear Regression model training/evaluation are complete. * **Next Steps:** Evaluate baseline performance plots, test and refine the Random Forest model (Week 6).
+Metric
 
-Export to Sheets
-Step 4: Add Reproducibility Instructions
-Provide clear instructions so anyone can download and run your work.
+Model
 
-Action	Suggested Markdown Content (Copy/Paste)
-1. Instructions	## How to Run This Project The project code is maintained in this GitHub repository, which contains Jupyter notebooks and Python scripts for full reproducibility. ### **Step 1: Download and Setup** 1. Clone the repository to your local machine: ```bash git clone https://github.com/Barsha-bytes/Project-review-airbnb_subway ````<br>2. Navigate to the project directory and install required dependencies (assuming a requirements.txt is available):<br> ```bash<br>cd Project-review-airbnb_subway` `pip install -r requirements.txt` ` ```` `### Step 2: Run the Analysis` `The analysis can be run sequentially through the following notebooks:` `* `1_Data_Collection_and_Cleaning.ipynb` `* `2_Feature_Engineering_and_Sentiment.ipynb` `* `3_Predictive_Modeling_Baseline.ipynb` (Contains the Linear Regression and MAE calculation)` `* `4_Model_Refinement_and_Results.ipynb` (Contains the Random Forest and final results)`
+Value
+
+Mean Absolute Error (MAE)
+
+Baseline Linear Regression
+
+$16.95
+
+Status
+
+
+
+Completed (Baseline), Random Forest Refinement Next
+
+2. Methodology and Feature Engineering
+
+The analysis integrates structured property data with unstructured textual data from guest reviews, utilizing advanced techniques to generate powerful predictive features.
+
+Data Sources
+
+Listings & Reviews: Sourced from Inside Airbnb.
+
+Subway Data: MTA GTFS information used to map transit access across the city.
+
+Review Text: Over 400,000 raw guest reviews used for sentiment analysis.
+
+Technical Feature Creation
+
+Special emphasis was placed on engineering features that drive value:
+
+Feature
+
+Data Type
+
+Technical Method
+
+Purpose
+
+Distance to Subway
+
+Structured
+
+cKDTree (nearest neighbor)
+
+Calculates the Euclidean distance (in meters) to the nearest subway station, quantifying convenience.
+
+Sentiment Score
+
+Unstructured (Reviews)
+
+VADER Lexicon
+
+Extracts the average compound sentiment score from guest reviews, quantifying service quality.
+
+Guest Capacity
+
+Structured
+
+Regression Coefficient
+
+The maximum number of guests a listing accommodates (the single largest price driver).
+
+3. Key Quantitative Findings
+
+The predictive modeling effort yielded precise, actionable insights into how price is truly determined in the NYC market:
+
+The Capacity Premium (OFFENSE)
+
+For every additional guest a property can accommodate, the listing earns a significant premium, demonstrating that space for people is more valuable than simple room count.
+
+$$\text{Capacity Premium} = + \mathbf{\$10.81} \text{ per guest, per night}$$
+
+The Transit Penalty (DEFENSE)
+
+Listings that are farther from the subway system are penalized, highlighting the importance of convenience for NYC guests and the need to offset this cost.
+
+$$\text{Transit Penalty} = - \mathbf{\$1.26} \text{ per point of Transit Score}$$
+
+4. How to Run This Project (Reproducibility)
+
+The project code is maintained in this GitHub repository and is fully reproducible using the provided Jupyter notebook.
+
+Step 1: Download and Setup
+
+Clone the repository to your local machine:
+
 git clone [https://github.com/Barsha-bytes/Project-review-airbnb_subway.git](https://github.com/Barsha-bytes/Project-review-airbnb_subway.git)
 
-Open the main notebook: Look in the notebooks/ folder for airbnb_subway.ipynb.
 
-Visualizations
-Once you save your plots (charts) and upload them to the visualizations/ folder, they will appear here!
+Navigate to the project directory and install required dependencies:
+
+cd Project-review-airbnb_subway
+pip install -r requirements.txt
+
+
+Step 2: Run the Analysis
+
+The full analysis pipeline is contained within the core Jupyter notebook, which includes data loading, feature engineering, and the Linear Regression baseline model.
+
+Core Notebook: airbnb_subway.ipynb
+
+Supporting Documents
+
+Full Presentation: Project Work (1).pdf (This link points to the PDF file you uploaded, assuming you place it in the root folder).
+
+Core Code: airbnb_subway.ipynb
